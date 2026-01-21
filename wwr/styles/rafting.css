@@ -1,27 +1,40 @@
-/* CSS Variables */
+/* ===============================
+   CSS VARIABLES
+================================ */
 :root {
-    --primary-color: #0b5d1e;
-    --secondary-color: #f4a261;
-    --accent1-color: #264653;
-    --accent2-color: #e9c46a;
+    --primary-blue: #0a3d62;
+    /* Navy blue */
+    --secondary-blue: #1e90ff;
+    /* Accent blue */
+    --black: #000000;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+
     --heading-font: Georgia, serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* Reset */
+/* ===============================
+   RESET
+================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* ===============================
+   BODY
+================================ */
 body {
     font-family: var(--body-font);
-    color: var(--accent1-color);
+    color: var(--black);
+    background-color: var(--white);
 }
 
-/* Layout */
+/* ===============================
+   PAGE WIDTH
+================================ */
 header,
 main,
 footer {
@@ -29,12 +42,14 @@ footer {
     margin: 0 auto;
 }
 
-/* Header */
+/* ===============================
+   HEADER
+================================ */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--primary-color);
+    background-color: var(--primary-blue);
     padding: 16px;
 }
 
@@ -42,25 +57,29 @@ header img {
     width: 120px;
 }
 
-nav a {
-    margin: 0 10px;
-    color: white;
+header nav a {
+    color: var(--white);
     text-decoration: none;
+    margin-left: 16px;
     font-weight: bold;
 }
 
-nav a:hover {
-    color: var(--accent2-color);
+header nav a:hover {
+    color: var(--secondary-blue);
 }
 
-/* Headings */
+/* ===============================
+   HEADINGS
+================================ */
 h1,
 h2 {
     font-family: var(--heading-font);
-    color: var(--primary-color);
+    color: var(--primary-blue);
 }
 
-/* Hero Section */
+/* ===============================
+   HERO SECTION
+================================ */
 .hero {
     position: relative;
 }
@@ -71,23 +90,26 @@ h2 {
     height: auto;
 }
 
+/* HERO TITLE OVERLAY */
 .hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
-    text-align: center;
     padding: 16px;
-    background-color: var(--accent1-color);
-    color: white;
-    opacity: 0.8;
+    text-align: center;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    opacity: 0.95;
 }
 
+/* HERO ARTICLE OVERLAY */
 .hero article {
     position: absolute;
     bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 16px;
     margin: 16px;
+    color: var(--black);
 }
 
 .hero article img {
@@ -97,20 +119,25 @@ h2 {
     border-radius: 4px;
 }
 
-/* Sections */
+/* ===============================
+   SECTIONS & TEXT
+================================ */
 section {
     margin: 16px;
     padding: 8px;
+    background-color: var(--white);
 }
 
 p {
     margin: 16px;
 }
 
-/* Footer */
+/* ===============================
+   FOOTER
+================================ */
 footer {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     padding: 16px;
     display: flex;
     justify-content: space-between;
