@@ -53,6 +53,7 @@ header {
     justify-content: space-between;
     background-color: var(--primary-blue);
     padding: 16px;
+    color: var(--white);
 }
 
 header img {
