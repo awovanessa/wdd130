@@ -16,7 +16,9 @@
 /* ===============================
    RESET
 ================================ */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,6 +31,7 @@ body {
     font-family: var(--body-font);
     color: var(--black);
     background-color: var(--white);
+    line-height: 1.6;
 }
 
 /* ===============================
@@ -58,6 +61,7 @@ header img {
 
 header nav a {
     color: var(--white);
+    /* high contrast on navy */
     text-decoration: none;
     margin-left: 16px;
     font-weight: bold;
@@ -74,6 +78,12 @@ h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-blue);
+    /* headings on white background */
+}
+
+.hero h1 {
+    color: var(--white);
+    /* on hero image */
 }
 
 /* ===============================
@@ -123,31 +133,67 @@ h2 {
 ================================ */
 section {
     margin: 16px;
-    padding: 8px;
+    padding: 16px;
     background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 p {
-    margin: 16px;
+    margin: 12px 0;
+    color: var(--black);
 }
 
 /* ===============================
    FOOTER
 ================================ */
 footer {
-    background-color: var(--black);
+    background-color: var(--primary-blue);
     color: var(--white);
     padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+footer p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: var(--white);
 }
 
 .socialmedia a {
     text-decoration: none;
+    display: inline-block;
 }
 
 .socialmedia img {
     width: 30px;
     margin-left: 10px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+
+    header,
+    main,
+    footer {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .hero article img {
+        width: 100px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
