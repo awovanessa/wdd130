@@ -2,13 +2,10 @@
    CSS VARIABLES
 ================================ */
 :root {
-    --primary-blue: #0a3d62;
-    /* Navy blue */
+    --primary-blue: rgb(10, 61, 98);
     --secondary-blue: #1e90ff;
-    /* Accent blue */
     --black: #000000;
     --white: #ffffff;
-
     --heading-font: Georgia, serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
