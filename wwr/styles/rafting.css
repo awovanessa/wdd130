@@ -42,12 +42,12 @@ footer {
 }
 
 /* ===============================
-   HEADER
+   HEADER (CSS GRID REQUIRED)
 ================================ */
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    justify-content: space-between;
     background-color: var(--primary-blue);
     padding: 16px;
     color: var(--white);
@@ -57,11 +57,18 @@ header img {
     width: 120px;
 }
 
+/* ===============================
+   NAV (CSS FLEX REQUIRED)
+================================ */
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
 header nav a {
     color: var(--white);
-    /* high contrast on navy */
     text-decoration: none;
-    margin-left: 16px;
     font-weight: bold;
 }
 
@@ -76,12 +83,6 @@ h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-blue);
-    /* headings on white background */
-}
-
-.hero h1 {
-    color: var(--white);
-    /* on hero image */
 }
 
 /* ===============================
@@ -127,7 +128,7 @@ h2 {
 }
 
 /* ===============================
-   SECTIONS & TEXT
+   SECTIONS
 ================================ */
 section {
     margin: 16px;
@@ -139,7 +140,30 @@ section {
 
 p {
     margin: 12px 0;
-    color: var(--black);
+}
+
+/* ===============================
+   ADVENTURES SECTION
+================================ */
+.adventures {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.adventures figure {
+    text-align: center;
+}
+
+.adventures img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 4px;
+}
+
+.adventures figcaption {
+    margin-top: 6px;
+    font-size: 0.9rem;
 }
 
 /* ===============================
@@ -152,18 +176,19 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 footer p {
-    margin: 8px 0;
     font-size: 0.9rem;
     color: var(--white);
 }
 
+.socialmedia {
+    display: flex;
+}
+
 .socialmedia a {
     text-decoration: none;
-    display: inline-block;
 }
 
 .socialmedia img {
@@ -180,7 +205,11 @@ footer p {
     main,
     footer {
         width: 95%;
-        margin: 0 auto;
+    }
+
+    .adventures {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero article img {
