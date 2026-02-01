@@ -2,10 +2,14 @@
    CSS VARIABLES
 ================================ */
 :root {
-    --primary-blue: rgb(10, 61, 98);
+    --primary-blue: #0a3d62;
     --secondary-blue: #1e90ff;
     --black: #000000;
     --white: #ffffff;
+    --overlay-white: #ffffff;
+    --overlay-opacity: 0.95;
+    --shadow-color: #0000001a;
+
     --heading-font: Georgia, serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -107,14 +111,15 @@ h2 {
     text-align: center;
     background-color: var(--primary-blue);
     color: var(--white);
-    opacity: 0.95;
+    opacity: var(--overlay-opacity);
 }
 
 /* HERO ARTICLE OVERLAY */
 .hero article {
     position: absolute;
     bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--overlay-white);
+    opacity: var(--overlay-opacity);
     padding: 16px;
     margin: 16px;
     color: var(--black);
@@ -135,7 +140,7 @@ section {
     padding: 16px;
     background-color: var(--white);
     border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px var(--shadow-color);
 }
 
 p {
