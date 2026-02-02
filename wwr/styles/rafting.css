@@ -110,7 +110,6 @@ header nav a:hover {
     width: 90%;
     max-width: 800px;
     box-shadow: 0 2px 6px var(--shadow);
-    /* variable used */
 }
 
 .hero article p {
