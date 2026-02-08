@@ -341,6 +341,7 @@ body,
 /* TEXTAREA - NON-RESIZABLE */
 .contact-right textarea {
     resize: none;
+    height: 4rem;
 }
 
 .contact-right input[type="checkbox"],
