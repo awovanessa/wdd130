@@ -1,12 +1,12 @@
 /* ===============================
-   VARIABLES
+   CSS VARIABLES
 ================================ */
 :root {
     --primary-color: #0a3d62;
-    --secondary-color: #1e90ff;
-    --text-color: #000000;
+    --secondary-color: #f39c12;
     --white: #ffffff;
-    --shadow: rgba(0, 0, 0, 0.15);
+    --text-color: #333333;
+    --shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* ===============================
@@ -30,6 +30,16 @@ body {
     background-color: var(--white);
 }
 
+/* ============================
+   BODY ALIGNMENT
+============================ */
+body,
+.site-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
 /* ===============================
    PAGE WIDTH
 ================================ */
@@ -50,7 +60,6 @@ header {
     background-color: var(--primary-color);
     padding: 16px;
     color: var(--white);
-    /* FIXED contrast */
 }
 
 header img {
@@ -130,7 +139,6 @@ header nav a:hover {
     margin: 24px 0;
     padding: 16px;
     box-shadow: 0 2px 6px var(--shadow);
-    /* variable used */
 }
 
 .history h2 {
@@ -157,7 +165,6 @@ header nav a:hover {
     margin: 24px 0;
     padding: 16px;
     box-shadow: 0 2px 6px var(--shadow);
-    /* variable used */
 }
 
 .adventures-section h2 {
@@ -210,39 +217,6 @@ footer {
 .socialmedia img {
     width: 30px;
     margin-left: 10px;
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 900px) {
-
-    header,
-    main,
-    footer {
-        width: 95%;
-    }
-
-    .history-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .adventures {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-/* ============================
-   BODY ALIGNMENT
-============================ */
-body,
-.site-main {
-    max-width: 1000px;
-    /* equal to header width */
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
 }
 
 /* ============================
@@ -358,7 +332,6 @@ body,
 /* Submit Button full width */
 .contact-right button[type="submit"] {
     width: 100%;
-    /* full width of the form container */
     padding: 0.8rem;
     background-color: #0077cc;
     color: #fff;
@@ -391,7 +364,6 @@ body,
 .employee-list {
     display: flex;
     flex-wrap: nowrap;
-    /* all images in one row */
     justify-content: center;
     gap: 2rem;
 }
@@ -405,7 +377,6 @@ body,
     width: 150px;
     height: 150px;
     object-fit: cover;
-    /* equal sizes */
     border-radius: 8px;
 }
 
@@ -413,6 +384,202 @@ body,
     margin-top: 0.5rem;
     font-size: 0.95rem;
     font-weight: bold;
+}
+
+/* ============================
+   HOME PAGE STYLES
+============================ */
+
+/* HOME HERO SECTION */
+.home-hero {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.home-hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 0.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* PRIMARY BUTTON STYLE */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #082d4a;
+}
+
+/* HOME IMAGES GRID */
+.home-images-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 900px;
+}
+
+.home-images-grid figure {
+    text-align: center;
+}
+
+.home-images-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow);
+}
+
+.home-images-grid figcaption {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* MORE THAN THE THRILL SECTION */
+.home-thrill-section {
+    position: relative;
+    width: 100%;
+    margin: 3rem auto;
+    max-width: 900px;
+}
+
+.home-thrill-section img {
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.thrill-content {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    background-color: rgba(10, 61, 98, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px var(--shadow);
+    text-align: center;
+}
+
+.thrill-content h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.thrill-content p {
+    line-height: 1.8;
+    margin-bottom: 1.3rem;
+    color: var(--white);
+}
+
+.thrill-content a {
+    color: black;
+    background-color: white;
+}
+
+/* NEWSLETTER SECTION */
+.home-newsletter {
+    max-width: 600px;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow);
+}
+
+.home-newsletter h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.home-newsletter p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    width: 100%;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+
+    header,
+    main,
+    footer {
+        width: 95%;
+    }
+
+    .history-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .adventures {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /* ============================
@@ -452,5 +619,356 @@ body,
     .employee-list img {
         width: 100px;
         height: 100px;
+    }
+
+    /* HOME PAGE RESPONSIVE */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .home-images-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .home-thrill-section img {
+        height: 300px;
+    }
+
+    .thrill-content {
+        position: static;
+        transform: none;
+        margin: 1rem auto;
+        max-width: 90%;
+    }
+}
+
+/* ============================
+   TRIPS PAGE STYLES
+============================ */
+
+/* CALL TO ACTION SECTION */
+.trips-cta {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0a4d7a 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.trips-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+}
+
+.trips-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-link {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 0.9rem 2.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* TRIP CARDS SECTION */
+.trip-descriptions {
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.trip-card {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trip-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trip-card-content h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.trip-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.trip-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.trip-meta span::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* DIFFICULTY BADGES */
+.difficulty {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.difficulty.beginner {
+    background-color: #27ae60;
+    color: var(--white);
+}
+
+.difficulty.intermediate {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.difficulty.advanced {
+    background-color: #e74c3c;
+    color: var(--white);
+}
+
+.trip-description {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.trip-card-content strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* TRIPS TABLE SECTION */
+.trips-table-section {
+    max-width: 900px;
+    width: 95%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow);
+    box-sizing: border-box;
+}
+
+.trips-table-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.trips-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.trips-table thead {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.trips-table th {
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trips-table td {
+    padding: 0.7rem 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    color: var(--text-color);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* First column (Trip Name) align left */
+.trips-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.trips-table th:first-child {
+    text-align: left;
+}
+
+.trips-table tbody tr:hover {
+    background-color: #f5f9fc;
+    transition: background-color 0.2s ease;
+}
+
+.trips-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Ensure rounded corners work */
+.trips-table thead tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.trips-table thead tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.trips-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.trips-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+/* BOOK NOW BUTTON IN TABLE */
+.book-now {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.book-now:hover {
+    background-color: #082d4a;
+}
+
+/* ============================
+   RESPONSIVE - TRIPS PAGE
+============================ */
+@media (max-width: 768px) {
+    .trips-cta {
+        padding: 2rem 1.5rem;
+    }
+
+    .trips-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .trips-cta p {
+        font-size: 1rem;
+    }
+
+    .trip-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .trip-card img {
+        height: 250px;
+    }
+
+    .trip-card-content {
+        padding: 1.5rem;
+    }
+
+    .trip-card-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .trips-table-section {
+        padding: 1rem;
+        overflow-x: auto;
+        width: 98%;
+    }
+
+    .trips-table {
+        font-size: 0.85rem;
+        min-width: 650px;
+    }
+
+    .trips-table th,
+    .trips-table td {
+        padding: 0.6rem 0.4rem;
+    }
+
+    .book-now {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trips-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .trip-meta {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
